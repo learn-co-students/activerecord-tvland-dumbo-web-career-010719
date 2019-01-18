@@ -7,12 +7,12 @@ class Actor < ActiveRecord::Base
    end
 
    def list_roles
-        all_characters=characters.select {|char| char.actor_id = self.id}
+      #   all_characters=characters.select {|char| char.actor_id = self.id}
       # all_shows=Show.all.select {|show| show.id == all_characters.show_id}
       # "#{all_characters.name} - #{all_shows.name}"
       
       result=[]
-         for character in all_characters
+         for character in characters
             for show in shows
                if character.show_id == show.id
                 result<<"#{character.name} - #{show.name}"
