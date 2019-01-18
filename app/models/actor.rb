@@ -11,7 +11,7 @@ class Actor < ActiveRecord::Base
       # all_shows=Show.all.select {|show| show.id == all_characters.show_id}
       # "#{all_characters.name} - #{all_shows.name}"
       
-      result=[]
+         result=[]
          for character in characters
             for show in shows
                if character.show_id == show.id
@@ -19,6 +19,13 @@ class Actor < ActiveRecord::Base
                end
             end
          end
+
          result
+         #  Write a method in the Actor class, #list_roles, that lists all of the characters that actor has
+         # select actor.name, show.name 
+         # from actors, characters, shows
+         # where actors.id = characters.actor_id and characters.show_id=shows.id
+
+
    end
 end
