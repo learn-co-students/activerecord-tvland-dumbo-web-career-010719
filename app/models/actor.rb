@@ -8,15 +8,18 @@ class Actor < ActiveRecord::Base
   end
 
   def list_roles
-    x = []
-    for character in characters
-      for show in shows 
-        if character.show_id == show.id
-          x << "#{character.name} - #{show.name}"
-        end
-      end
+    # x = []
+    # for character in characters
+    #   for show in shows
+    #     if character.show_id == show.id
+    #       x << "#{character.name} - #{show.name}"
+    #     end
+    #   end
+    # end
+    # x
+    self.characters.map do |character|
+      "#{character.name} - #{character.show.name}"
     end
-    x
   end
 
 
