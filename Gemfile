@@ -1,7 +1,9 @@
 source "https://rubygems.org"
 gem 'pry'
-gem "rspec"
 gem "sinatra-activerecord"
 gem "sqlite3"
 gem "rake"
-gem "database_cleaner"
+gem "rainbow"
+gem 'tty-prompt'
+gem "tty-font"
+gem "table_print"

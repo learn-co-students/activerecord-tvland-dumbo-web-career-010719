@@ -10,31 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 6) do
+ActiveRecord::Schema.define(version: 3) do
 
-  create_table "actors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+  create_table "arcades", force: :cascade do |t|
+    t.string "game_name"
+    t.integer "price", default: 2
   end
 
-  create_table "characters", force: :cascade do |t|
-    t.string "name"
-    t.integer "show_id"
-    t.integer "actor_id"
-    t.string "catchphrase"
+  create_table "games", force: :cascade do |t|
+    t.string "game_name"
+    t.string "username"
+    t.integer "price", default: 2
   end
 
-  create_table "networks", force: :cascade do |t|
-    t.string "call_letters"
-    t.integer "channel"
-  end
-
-  create_table "shows", force: :cascade do |t|
-    t.string "name"
-    t.integer "network_id"
-    t.string "genre"
-    t.string "day"
-    t.string "season"
+  create_table "users", force: :cascade do |t|
+    t.string "name", default: "Guest"
+    t.string "username"
+    t.string "pin", default: "Non"
+    t.integer "age", default: 1
+    t.integer "money", default: 20
   end
 
 end
